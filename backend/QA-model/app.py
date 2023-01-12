@@ -15,6 +15,7 @@ def hello():
 @app.route("/run",  methods=['GET', 'POST'])
 def run_model():
     if request.method == 'POST':
+        return "Answer is this"
         try:
             question = request.args.get('question')
             unit = int(request.args.get('unit'))
@@ -33,27 +34,27 @@ def run_model():
         context = ''
         # Set context
         if unit == 1:
-            context = open(os.getcwd() + '/unit1.txt','r')
+            context = open(os.getcwd() + '/unit1.txt',mode='r',encoding="utf8")
         elif unit == 2:
-            context = open(os.getcwd() + '/unit2.txt','r')
+            context = open(os.getcwd() + '/unit2.txt',mode='r',encoding="utf8")
         elif unit == 3:
-            context = open(os.getcwd() + '/unit3.txt','r')
+            context = open(os.getcwd() + '/unit3.txt',mode='r',encoding="utf8")
         elif unit == 4:
-            context = open(os.getcwd() + '/unit4.txt','r')
+            context = open(os.getcwd() + '/unit4.txt',mode='r',encoding="utf8")
         elif unit == 5:
-            context = open(os.getcwd() + '/unit5.txt','r')
+            context = open(os.getcwd() + '/unit5.txt',mode='r',encoding="utf8")
         else:
             app.aborter(400)
         
-        try:
-            context = context.read()
-            QA_input = {
-                            'question': question,
-                            'context': context
-            }
-            resq = nlp(QA_input)
-            return resq
-        except Exception:
-            app.aborter(500)
+        # try:
+        context = context.read()
+        QA_input = {
+                        'question': question,
+                        'context': context
+        }
+        resq = nlp(QA_input)
+        return resq
+        # except Exception:
+            # app.aborter(500)
     else:
         app.aborter(405)

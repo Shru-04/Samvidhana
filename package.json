@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "create-react-native-app": "^3.8.0",
+    "multiselect-react-dropdown": "^2.0.25"
+  }
+}
