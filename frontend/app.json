@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "Samvidhana",
+    "slug": "Samvidhana",
+    "version": "1.0.0",
+    "icon": "logo.png",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#0e142b"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "663aedee-4fba-4a0e-939f-d030df67dd16"
+      }
+    },
+    "android": {
+      "package": "com.ps.Samvidhana",
+      "adaptiveIcon": {
+        "foregroundImage": "./logo.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    }
+  },
+  "name": "Samvidhana"
+}
